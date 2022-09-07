@@ -1,0 +1,122 @@
+:root {
+  --darkgrey: rgb(24, 25, 32);
+  --grey: rgb(48, 48, 48);
+  --white: rgb(255, 255, 255);
+  --black: rgb(9, 12, 31);
+  --blue: rgb(95, 71, 231);
+  --hoverblue: rgb(76, 56, 190);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.4s;
+}
+
+body {
+  background-color: var(--darkgrey);
+}
+
+.light {
+  background-color: var(--white);
+}
+
+.text-light {
+  color: var(--black);
+}
+
+.toggle {
+  width: 3.5rem;
+  height: 1.8rem;
+  margin: 24px;
+  position: relative;
+  display: inline-block;
+}
+
+.toggle #toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 40px;
+  background-color: var(--white);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  left: 4px;
+  bottom: 2px;
+  background-color: var(--darkgrey);
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--grey);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--grey);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+  background-color: var(--white);
+}
+
+.container {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+}
+
+.rectangle {
+  width: 20rem;
+  height: 6rem;
+  background-color: var(--blue);
+  border-radius: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  color: var(--white);
+}
+
+.rectangle:hover {
+  background-color: var(--hoverblue);
+}
+
+h2 {
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  margin: 1rem 0 0 0;
+}
